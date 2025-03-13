@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Luas</title>
+</head>
+<body>
+
+    <h2>Menghitung Luas Persegi Panjang, Bujur Sangkar, dan Segitiga</h2>
+    <br>
+
+    <script>
+        // Menghitung luas persegi panjang
+        let panjang = 10;  //Panjang Persegi Panjang
+        let lebar = 5;  //Lebar Persegi Panjang
+        let luasPersegiPanjang = panjang * lebar;  //Rumus Luas Persegi Panjang " Panjang x Lebar "
+
+        //Menampilkan Hasil di Halaman Web
+        document.write("<h2>Persegi Panjang</h2>");
+        document.write("<p>Panjang: " + panjang + "</p>");
+        document.write("<p>Lebar: " + lebar + "</p>");
+        document.write("<p>Rumus: "+ "Panjang x Lebar" + "</p>");
+        document.write("<h4>Luas Persegi Panjang: " + panjang + " x " + lebar + " = " + luasPersegiPanjang + "</h4>");
+
+
+
+        // Menghitung luas bujur sangkar
+        let sisi = 7;  //Sisi Bujur Sangkar
+        let luasBujurSangkar = sisi * sisi;  //Rumus Luas Bujur Sangkar " Sisi x Sisi "
+
+        //Menampilkan Hasil di Halaman Web
+        document.write("<h2>Bujur Sangkar</h2>");
+        document.write("<p>Sisi: " + sisi + "</p>");
+        document.write("<p>Rumus: "+ "Sisi x Sisi" + "</p>");
+        document.write("<h4>Luas Bujur Sangkar: " + sisi + " x " + sisi + " = " + luasBujurSangkar + "</h4>");
+
+
+
+        // Menghitung luas segitiga
+        let alas = 8;  //Alas Segitiga
+        let tinggi = 6;  //Tinggi Segitiga
+        let luasSegitiga = (alas * tinggi) / 2; //Rumus Luas Segitiga " (Alas x Tinggi) / 2 "
+
+        //Menampilkan Hasil di Halaman Web
+        document.write("<h2>Segitiga</h2>");
+        document.write("<p>Alas: " + alas + "</p>");
+        document.write("<p>Tinggi: " + tinggi + "</p>");
+        document.write("<p>Rumus: "+ "(Alas x Tinggi) / 2" + "</p>");
+        document.write("<h4>Luas Segitiga: (" + alas + " x " + tinggi + ") / 2" + " = " + luasSegitiga + "</h4>");
+    </script>
+
+</body>
+</html>
