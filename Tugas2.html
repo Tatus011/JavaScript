@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pegawai</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Data Pegawai</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nama Pegawai</th>
+                <th>Umur</th>
+                <th>Jabatan</th>
+                <th>Status</th>
+                <th>Gaji Pokok</th>
+                <th>Tunjangan Jabatan</th>
+                <th>BPJS</th>
+                <th>Tunjangan Keluarga</th>
+                <th>Total Gaji</th>
+            </tr>
+        </thead>
+        <tbody id="pegawai-data">
+        </tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+
+    <script>
+        // Data pegawai
+        let pegawai = "Dodi Prayodi";
+        let umur = 25;
+        let jabatan = "Manajer";
+        let status = "Menikah";
+
+
+        // Menentukan gaji pokok berdasarkan jabatan.
+        // Menggunakan operator ternary untuk menentukan gaji pokok.
+        let gajiPokok;
+        if (jabatan === "Manajer") {
+            gajiPokok = 15000000;
+        } else if (jabatan === "Asisten Manajer") {
+            gajiPokok = 10000000;
+        } else if (jabatan === "Staff") {
+            gajiPokok = 5000000;
+        } else {
+            gajiPokok = 0;
+        }
+
+
+        // Perhitungan tunjangan dan potongan
+        // Persentase dinyatakan sebagai desimal yaitu: 0.15 = 15%, 0.10 = 10%, dan 0.20 = 20%
+        let tunjanganJabatan = 0.15 * gajiPokok;
+        let bpjs = 0.10 * gajiPokok;
+        // jika menikah tunjangan 20%, jika tidak maka tunjangan 0%
+        let tunjanganKeluarga = status === "Menikah" ? 0.20 * gajiPokok : 0;
+
+        // Jumlah dari gaji pokok, tunjangan jabatan, BPJS, dan tunjangan keluarga
+        let totalGaji = gajiPokok + tunjanganJabatan + tunjanganKeluarga - bpjs; 
+
+        // Menampilkan data ke tabel
+        let tbody = document.getElementById("pegawai-data");
+        tbody.innerHTML = `
+            <tr>
+                <td>${pegawai}</td>
+                <td>${umur}</td>
+                <td>${jabatan}</td>
+                <td>${status}</td>
+                <td>Rp ${gajiPokok.toLocaleString()}</td>
+                <td>Rp ${tunjanganJabatan.toLocaleString()}</td>
+                <td>Rp ${bpjs.toLocaleString()}</td>
+                <td>Rp ${tunjanganKeluarga.toLocaleString()}</td>
+                <td>Rp ${totalGaji.toLocaleString()}</td>
+            </tr>
+        `;
+    </script>
+</body>
+</html>
